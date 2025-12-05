@@ -1,0 +1,44 @@
+import { StrictMode } from "react";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { createRoot } from "react-dom/client";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import App from "./App.tsx";
+import Layout from "./Components/Layout.tsx";
+import Verses from "./Components/Verses.tsx";
+import { AppProvider } from "./Components/AppContext.tsx";
+import Books from "./Components/Books.tsx";
+import Chapters from "./Components/Chapters.tsx";
+import Translations from "./Components/Translations.tsx";
+
+const queryClient = new QueryClient();
+
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <Layout />,
+      children: [
+        { index: true, element: <App /> },
+        { path: "translations", element: <Translations /> },
+        { path: "/books/:id", element: <Books /> },
+        { path: "/books/:id/chapters/:id", element: <Chapters /> },
+        { path: "/books/:id/chapters/:id/verses/", element: <Verses /> },
+        // {
+        //   path: "compare-two-players/:id/vs/:id2",
+        //   element: <CompareTwoPlayers />,
+        // },
+      ],
+    },
+  ],
+  { basename: import.meta.env.BASE_URL } // viktig!
+);
+
+createRoot(document.getElementById("root")!).render(
+  <StrictMode>
+    <QueryClientProvider client={queryClient}>
+      <AppProvider>
+        <RouterProvider router={router} />
+      </AppProvider>
+    </QueryClientProvider>
+  </StrictMode>
+);

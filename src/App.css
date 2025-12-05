@@ -1,0 +1,120 @@
+* {
+  margin: 0px;
+  box-sizing: border-box;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.menuNav {
+  width: 50%;
+  height: 250px;
+  background-image: url("./assets/jonathan-farber-_lpQA9ox6IA-unsplash.jpg");
+  background-size: 100% 100%;
+  margin-bottom: 10px;
+}
+.books {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-image: url("./assets/jonathan-farber-_lpQA9ox6IA-unsplash.jpg");
+  padding: 10px;
+  margin: 10px;
+  width: 500px;
+  gap: 35px;
+}
+.books a {
+  width: 100%;
+  background-color: rgba(0, 198, 243, 0.8);
+  text-decoration: none;
+  cursor: pointer;
+}
+.books a:hover {
+  color: gray;
+}
+
+.translations {
+  background-image: url("./assets/jonathan-farber-_lpQA9ox6IA-unsplash.jpg");
+  background-size: 100% 100%;
+  padding: 20px;
+  margin: 20px;
+}
+.translations-text {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 10px;
+  gap: 35px;
+  background-color: rgba(0, 198, 243, 0.7);
+}
+.translation-link:hover {
+  color: gray;
+  cursor: pointer;
+}
+.chapters {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-image: url("./assets/jonathan-farber-_lpQA9ox6IA-unsplash.jpg");
+  background-size: 100% 100%;
+  padding: 20px;
+  margin: 20px;
+  width: 800px;
+}
+.chapters a {
+  padding: 10px;
+  margin: 10px;
+  background-color: rgba(0, 198, 243, 0.7);
+  cursor: pointer;
+}
+.chapters a:hover {
+  background-color: rgba(0, 198, 243, 0.7);
+  color: gray;
+}
+.verses {
+  width: 800px;
+  padding: 10px;
+  margin: 10px;
+  background-color: rgba(243, 142, 0, 0.7);
+}
+.verses p {
+  width: 750px;
+  padding: 10px;
+  margin: 10px;
+  background-color: rgba(243, 142, 0, 0.7);
+}
+.menuItem {
+  cursor: pointer;
+}
+.menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 105px;
+  list-style-type: none;
+  background-color: rgba(0, 198, 243, 0.7);
+  padding: 10px;
+  border-radius: 50px;
+}
+.menu a {
+  text-decoration: none;
+  color: inherit;
+}
+.menu a:hover {
+  color: gray;
+}
+.verse {
+  padding: 10px;
+  margin: 10px;
+}
+.church {
+  width: 150px;
+  height: 200px;
+}
+.church-icon {
+  width: 80px;
+  height: 80px;
+}
