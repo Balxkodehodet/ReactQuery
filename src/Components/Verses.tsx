@@ -1,12 +1,9 @@
 import { getData } from "../Hooks/useGetData.ts";
-import { useContext, useState, useEffect } from "react";
+import { useContext } from "react";
 import { AppContext } from "./AppContext.tsx";
-import { Link } from "react-router-dom";
 import Church from "../assets/josh-eckstein-WYIslVNcCVw-unsplash.jpg";
 
 export default function Verses() {
-  const [verseId, setVerseId] = useState(0);
-  const [isVerse, setIsverse] = useState(false);
   const ctx = useContext(AppContext);
   if (!ctx) {
     throw new Error(
@@ -15,12 +12,6 @@ export default function Verses() {
   }
   const { url } = ctx;
   const { data, isLoading, error } = getData(url);
-  let verseData;
-  useEffect(() => {
-    verseData = data?.verses?.filter((verse: any) => {
-      return verse === verseId;
-    });
-  }, [verseId]);
 
   if (isLoading) <p>Loading...</p>;
   if (error) <p>Error... : {error.message}</p>;

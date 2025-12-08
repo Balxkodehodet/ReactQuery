@@ -9,6 +9,7 @@ import { AppProvider } from "./Components/AppContext.tsx";
 import Books from "./Components/Books.tsx";
 import Chapters from "./Components/Chapters.tsx";
 import Translations from "./Components/Translations.tsx";
+import NotFound from "./Components/NotFound.tsx";
 
 const queryClient = new QueryClient();
 
@@ -23,10 +24,7 @@ const router = createBrowserRouter(
         { path: "/books/:id", element: <Books /> },
         { path: "/books/:id/chapters/:id", element: <Chapters /> },
         { path: "/books/:id/chapters/:id/verses/", element: <Verses /> },
-        // {
-        //   path: "compare-two-players/:id/vs/:id2",
-        //   element: <CompareTwoPlayers />,
-        // },
+        { path: "/notfound/", element: <NotFound /> },
       ],
     },
   ],

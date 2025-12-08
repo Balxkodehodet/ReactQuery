@@ -1,6 +1,6 @@
-import { getData } from "../Hooks/useGetData.ts";
+//import { getData } from "../Hooks/useGetData.ts";
 import { Link } from "react-router-dom";
-import { useContext, useEffect } from "react";
+import { useContext, useState } from "react";
 import { AppContext } from "./AppContext.tsx";
 export default function Breadcrumbs() {
   const ctx = useContext(AppContext);
@@ -9,9 +9,9 @@ export default function Breadcrumbs() {
       "Appcontext is undefined, make sure you are using App provider"
     );
   }
-  const { url, setUrl, bookId, setBookId, translationId, setTranslationId } =
-    ctx;
-  const { data } = getData(url);
+  const { setUrl, bookId, translationId } = ctx;
+  const [modal, setModal] = useState(false);
+  //const { data } = getData(url);
 
   return (
     <>
@@ -26,8 +26,12 @@ export default function Breadcrumbs() {
         </li>
       </Link>
       <Link
-        to={`/books/${translationId}`}
-        onClick={() => setUrl(`https://bible-api.com/data/${translationId}`)}
+        to={translationId ? `/books/${translationId}` : `/notfound/`}
+        onClick={() => {
+          translationId
+            ? setUrl(`https://bible-api.com/data/${translationId}`)
+            : setModal(true);
+        }}
       >
         <li className="menuItem">Books</li>
       </Link>

@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { getData } from "../Hooks/useGetData.ts";
 import { useContext } from "react";
 import { AppContext } from "./AppContext.tsx";

@@ -1,9 +1,8 @@
 import { getData } from "../Hooks/useGetData.ts";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { AppContext } from "./AppContext.tsx";
 import { Link } from "react-router-dom";
 export default function Chapters() {
-  const [chapterId, setChapterId] = useState(null);
   const ctx = useContext(AppContext);
   if (!ctx) {
     throw new Error(
