@@ -138,3 +138,11 @@ main {
   width: 80px;
   height: 80px;
 }
+.nextback-btn {
+  display: flex;
+  flex-direction: row;
+}
+.nextback-btn button {
+  padding: 10px;
+  margin: 10px;
+}

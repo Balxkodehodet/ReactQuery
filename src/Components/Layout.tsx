@@ -4,6 +4,7 @@ import Breadcrumbs from "./Breadcrumbs.tsx";
 import { useContext } from "react";
 import { AppContext } from "./AppContext.tsx";
 import Home from "../assets/home (1).png";
+import NextBackButton from "./NextBackButton.tsx";
 
 export default function Layout() {
   const ctx = useContext(AppContext);
@@ -12,7 +13,7 @@ export default function Layout() {
       "Appcontext is undefined, make sure you are using App provider"
     );
   }
-  const { setUrl } = ctx;
+  const { setUrl, url, bookId, translationId } = ctx;
   return (
     <main>
       <nav className="menuNav">
@@ -37,6 +38,7 @@ export default function Layout() {
       </nav>
 
       <img className="church" src={Church} />
+      <NextBackButton />
       <Outlet />
     </main>
   );

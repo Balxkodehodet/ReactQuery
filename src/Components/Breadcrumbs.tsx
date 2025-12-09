@@ -1,6 +1,6 @@
 import { getData } from "../Hooks/useGetData.ts";
 import { Link } from "react-router-dom";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { AppContext } from "./AppContext.tsx";
 import Bible from "../assets/bible.png";
 import Chapters from "../assets/videos.png";
@@ -14,8 +14,6 @@ export default function Breadcrumbs() {
     );
   }
   const { url, setUrl, bookId, translationId } = ctx;
-  const [modal, setModal] = useState(false);
-  //const { data } = getData(url);
 
   return (
     <>
