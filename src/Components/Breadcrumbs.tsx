@@ -37,9 +37,7 @@ export default function Breadcrumbs() {
       <Link
         to={translationId ? `/books/${translationId}` : `/notfound/`}
         onClick={() => {
-          translationId
-            ? setUrl(`https://bible-api.com/data/${translationId}`)
-            : getData(url);
+          setUrl(`https://bible-api.com/data/${translationId}`);
         }}
       >
         <div className="book-item">
