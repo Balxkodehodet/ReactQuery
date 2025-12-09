@@ -64,6 +64,26 @@ main {
   margin: 20px;
   width: 800px;
 }
+.verse-book,
+.book-item,
+.chapters-item,
+.translation-item,
+.home-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.bible,
+.chapters-img,
+.home-img {
+  width: 32px;
+  height: 32px;
+}
+.translation-img {
+  border-radius: 50px;
+  width: 32px;
+  height: 32px;
+}
 .chapters a {
   padding: 10px;
   margin: 10px;
@@ -95,7 +115,7 @@ main {
   justify-content: center;
   gap: 105px;
   list-style-type: none;
-  background-color: rgba(0, 198, 243, 0.7);
+  background-color: rgba(253, 253, 253, 0.7);
   padding: 10px;
   border-radius: 50px;
 }

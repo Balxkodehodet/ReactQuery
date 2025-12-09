@@ -2,6 +2,7 @@ import { getData } from "../Hooks/useGetData.ts";
 import { useContext } from "react";
 import { AppContext } from "./AppContext.tsx";
 import Church from "../assets/josh-eckstein-WYIslVNcCVw-unsplash.jpg";
+import Bible from "../assets/bible.png";
 
 export default function Verses() {
   const ctx = useContext(AppContext);
@@ -27,10 +28,13 @@ export default function Verses() {
                   src={Church}
                   alt="A cross in a church"
                 />
-                <p className="verse">
-                  Book: {verse.book}, chapter: {verse.chapter}, verse:{" "}
-                  {verse.verse}: {verse.text}
-                </p>
+                <div className="verse-book">
+                  <img className="bible" src={Bible} alt="a bible book" />
+                  <p className="verse">
+                    Book: {verse.book}, chapter: {verse.chapter}, verse:{" "}
+                    {verse.verse}: {verse.text}
+                  </p>
+                </div>
               </div>
             );
           })}

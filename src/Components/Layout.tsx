@@ -3,6 +3,7 @@ import Church from "../assets/josh-eckstein-WYIslVNcCVw-unsplash.jpg";
 import Breadcrumbs from "./Breadcrumbs.tsx";
 import { useContext } from "react";
 import { AppContext } from "./AppContext.tsx";
+import Home from "../assets/home (1).png";
 
 export default function Layout() {
   const ctx = useContext(AppContext);
@@ -22,7 +23,14 @@ export default function Layout() {
               setUrl("https://bible-api.com/data");
             }}
           >
-            <li>Home</li>
+            <div className="home-item">
+              <img
+                className="home-img"
+                src={Home}
+                alt="Image of a home or a house from the front"
+              />
+              <li>Home</li>
+            </div>
           </Link>
           <Breadcrumbs />
         </ul>
