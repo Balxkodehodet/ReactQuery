@@ -46,6 +46,12 @@ export default function Credits() {
       >
         Home page icons created by Aldo Cervantes - Flaticon
       </a>
+      <a
+        href="https://www.flaticon.com/free-icons/hamburger"
+        title="hamburger icons"
+      >
+        Hamburger icons created by feen - Flaticon
+      </a>
     </>
   );
 }
