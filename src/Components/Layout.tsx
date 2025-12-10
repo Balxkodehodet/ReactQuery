@@ -38,7 +38,7 @@ export default function Layout() {
       </nav>
 
       <img className="church" src={Church} />
-      <NextBackButton />
+      {/* <NextBackButton /> */}
       <Outlet />
     </main>
   );

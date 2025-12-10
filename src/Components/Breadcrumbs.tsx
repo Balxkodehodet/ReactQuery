@@ -34,12 +34,7 @@ export default function Breadcrumbs() {
           </li>
         </div>
       </Link>
-      <Link
-        to={translationId ? `/books/${translationId}` : `/notfound/`}
-        onClick={() => {
-          setUrl(`https://bible-api.com/data/${translationId}`);
-        }}
-      >
+      <Link to={translationId ? `/books/${translationId}` : `/notfound/`}>
         <div className="book-item">
           <img className="bible" src={Bible} />
           <li className="menuItem">Books</li>
@@ -50,9 +45,6 @@ export default function Breadcrumbs() {
           bookId && translationId
             ? `/books/${translationId}/chapters/${bookId}`
             : `/notfound/`
-        }
-        onClick={() =>
-          setUrl(`https://bible-api.com/data/${translationId}/${bookId}`)
         }
       >
         {" "}

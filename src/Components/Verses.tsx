@@ -1,23 +1,20 @@
 import { getData } from "../Hooks/useGetData.ts";
-import { useContext } from "react";
-import { AppContext } from "./AppContext.tsx";
 import Church from "../assets/josh-eckstein-WYIslVNcCVw-unsplash.jpg";
 import Bible from "../assets/bible.png";
+import { useNavigate, useParams } from "react-router-dom";
 
 export default function Verses() {
-  const ctx = useContext(AppContext);
-  if (!ctx) {
-    throw new Error(
-      "Appcontext is undefined, make sure you are using App provider"
-    );
-  }
-  const { url } = ctx;
-  const { data, isLoading, error } = getData(url);
+  const { translationId, bookId, chapterId } = useParams();
+  const navigate = useNavigate();
 
+  const url = `https://bible-api.com/data/${translationId}/${bookId}/${chapterId}`; //bible-api.com/data/web/GEN/1
+  const { data, isLoading, error } = getData(url);
+  console.log("Data verses: ", data);
   if (isLoading) <p>Loading...</p>;
   if (error) <p>Error... : {error.message}</p>;
   return (
     <>
+      <button onClick={() => navigate(-1)}>Back</button>
       {data?.verses && (
         <div className="verses">
           {data?.verses.map((verse: any) => {

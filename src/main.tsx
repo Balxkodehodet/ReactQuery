@@ -21,10 +21,16 @@ const router = createBrowserRouter(
       children: [
         { index: true, element: <App /> },
         { path: "translations", element: <Translations /> },
-        { path: "/books/:id", element: <Books /> },
-        { path: "/books/:id/chapters/:id", element: <Chapters /> },
-        { path: "/books/:id/chapters/:id/verses/", element: <Verses /> },
-        { path: "/notfound/", element: <NotFound /> },
+        { path: "books/:translationId", element: <Books /> },
+        {
+          path: "books/:translationId/chapters/:bookId",
+          element: <Chapters />,
+        },
+        {
+          path: "books/:translationId/chapters/:bookId/verses/:chapterId",
+          element: <Verses />,
+        },
+        { path: "notfound/", element: <NotFound /> },
       ],
     },
   ],
