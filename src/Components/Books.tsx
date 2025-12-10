@@ -22,20 +22,22 @@ export default function Books() {
   }
   return (
     <>
-      <button onClick={() => navigate(-1)}>Back</button>
       {data?.books && (
-        <div className="books">
-          {data?.books.map((book: any) => {
-            return (
-              <Link
-                to={`/books/${translationId}/chapters/${book.id}`}
-                key={book.id}
-              >
-                <strong>{book.name}</strong>
-              </Link>
-            );
-          })}
-        </div>
+        <>
+          <button onClick={() => navigate(-1)}>Back</button>
+          <div className="books">
+            {data?.books.map((book: any) => {
+              return (
+                <Link
+                  to={`/books/${translationId}/chapters/${book.id}`}
+                  key={book.id}
+                >
+                  <strong>{book.name}</strong>
+                </Link>
+              );
+            })}
+          </div>
+        </>
       )}
     </>
   );

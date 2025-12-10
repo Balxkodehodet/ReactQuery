@@ -12,22 +12,24 @@ export default function Chapters() {
   }
   return (
     <>
-      <button onClick={() => navigate(-1)}>Back</button>
       {data?.chapters && (
-        <div className="chapters">
-          {data.chapters.map((chapter: any) => {
-            return (
-              <Link
-                to={`/books/${translationId}/chapters/${bookId}/verses/${chapter.chapter}`}
-                key={chapter.chapter}
-              >
-                <strong>
-                  {chapter.book}, chapter: {chapter.chapter}
-                </strong>
-              </Link>
-            );
-          })}
-        </div>
+        <>
+          <button onClick={() => navigate(-1)}>Back</button>
+          <div className="chapters">
+            {data.chapters.map((chapter: any) => {
+              return (
+                <Link
+                  to={`/books/${translationId}/chapters/${bookId}/verses/${chapter.chapter}`}
+                  key={chapter.chapter}
+                >
+                  <strong>
+                    {chapter.book}, chapter: {chapter.chapter}
+                  </strong>
+                </Link>
+              );
+            })}
+          </div>
+        </>
       )}
     </>
   );

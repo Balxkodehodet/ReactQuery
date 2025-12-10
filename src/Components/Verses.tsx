@@ -14,28 +14,30 @@ export default function Verses() {
   if (error) <p>Error... : {error.message}</p>;
   return (
     <>
-      <button onClick={() => navigate(-1)}>Back</button>
       {data?.verses && (
-        <div className="verses">
-          {data?.verses.map((verse: any) => {
-            return (
-              <div key={verse.verse}>
-                <img
-                  className="church-icon"
-                  src={Church}
-                  alt="A cross in a church"
-                />
-                <div className="verse-book">
-                  <img className="bible" src={Bible} alt="a bible book" />
-                  <p className="verse">
-                    Book: {verse.book}, chapter: {verse.chapter}, verse:{" "}
-                    {verse.verse}: {verse.text}
-                  </p>
+        <>
+          <button onClick={() => navigate(-1)}>Back</button>
+          <div className="verses">
+            {data?.verses.map((verse: any) => {
+              return (
+                <div key={verse.verse}>
+                  <img
+                    className="church-icon"
+                    src={Church}
+                    alt="A cross in a church"
+                  />
+                  <div className="verse-book">
+                    <img className="bible" src={Bible} alt="a bible book" />
+                    <p className="verse">
+                      Book: {verse.book}, chapter: {verse.chapter}, verse:{" "}
+                      {verse.verse}: {verse.text}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            );
-          })}
-        </div>
+              );
+            })}
+          </div>
+        </>
       )}
     </>
   );
