@@ -1,20 +1,12 @@
 import { getData } from "../Hooks/useGetData.ts";
-import { Link } from "react-router-dom";
-import { useContext } from "react";
-import { AppContext } from "./AppContext.tsx";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import Bible from "../assets/bible.png";
 import Chapters from "../assets/videos.png";
 import Translator from "../assets/translator.gif";
 
 export default function Breadcrumbs() {
-  const ctx = useContext(AppContext);
-  if (!ctx) {
-    throw new Error(
-      "Appcontext is undefined, make sure you are using App provider"
-    );
-  }
-  const { url, setUrl, bookId, translationId } = ctx;
-
+  const { translationId, bookId } = useParams();
+  const navigate = useNavigate();
   return (
     <>
       <Link to="/">
@@ -24,14 +16,7 @@ export default function Breadcrumbs() {
             src={Translator}
             alt="A animation representing translation"
           />
-          <li
-            className="menuItem"
-            onClick={() => {
-              setUrl("https://bible-api.com/data");
-            }}
-          >
-            Translations
-          </li>
+          <li className="menuItem">Translations</li>
         </div>
       </Link>
       <Link to={translationId ? `/books/${translationId}` : `/notfound/`}>
