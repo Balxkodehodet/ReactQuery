@@ -6,7 +6,6 @@ import Translator from "../assets/translator.gif";
 
 export default function Breadcrumbs() {
   const { translationId, bookId } = useParams();
-  const navigate = useNavigate();
   return (
     <>
       <Link to="/">
