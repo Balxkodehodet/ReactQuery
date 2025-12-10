@@ -1,5 +1,4 @@
-import { getData } from "../Hooks/useGetData.ts";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Bible from "../assets/bible.png";
 import Chapters from "../assets/videos.png";
 import Translator from "../assets/translator.gif";
